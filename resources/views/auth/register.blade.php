@@ -9,12 +9,20 @@
 </head>
 <style>
 body{
-    background-color: black;
-    color: white;
+    background-color: #f4f9f9;
 }
 .container .style-class{
-    border: 2px solid white;
-    padding: 10px;
+    /* border: 0.2px solid gray; */
+    box-shadow: 0px 0px 40px rgba(0,0,0,0.2);
+    padding: 30px 40px;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.form-group input{
+    border-radius: 8px;
+}
+.form-group button{
     border-radius: 8px;
 }
 </style>

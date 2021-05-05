@@ -9,8 +9,19 @@
 </head>
 <style>
 body{
-    background-color: black;
-    color: white;
+    background-color: #f4f9f9;
+}
+.btn a{
+    text-decoration: none;
+    background-color: #212529;
+    color:white;
+    padding: 8px;
+    border-radius: 8px;
+}
+.btn a:hover{
+    background-color: white;
+    color: black;
+    font-weight: 600;
 }
 .container h2{
     margin-top: 20px;
@@ -18,8 +29,11 @@ body{
 </style>
 <body>
 <!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-2 h1" style="color:black">Dashboard</span>
+<nav class="navbar navbar-light d-flex align-items-center bg-dark" style="height: 100px">
+  <span class="navbar-brand h1" style="color:white; padding-left: 200px;">Dashboard</span>
+  <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline" style="margin-right: 200px;"><a href="logout">Logout</a> </button>
+    </form>
 </nav>
     <div class="container d-flex justify-content-center">
     <h2 >Hello, {{ $LoggedUserInfo->name }}</h2>

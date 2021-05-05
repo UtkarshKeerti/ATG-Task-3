@@ -22,7 +22,7 @@ class UserAuthController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=>'required|email|unique:users',
-            'password'=>'required|max:8'
+            'password'=>'required|min:8'
         ]);
 
         $user = new User;
@@ -42,7 +42,7 @@ class UserAuthController extends Controller
      function check(Request $request){
         $request->validate([
             'email'=>'required|email',
-            'password'=>'required|max:8'
+            'password'=>'required|min:8'
         ]);
 
         $user = User::where('email','=',$request->email)->first();
@@ -54,7 +54,7 @@ class UserAuthController extends Controller
 
             }
             else{
-                return back()->with('fail', 'Ivalid password');
+                return back()->with('fail', 'Invalid password');
             }
         }
         else{
@@ -71,5 +71,11 @@ class UserAuthController extends Controller
             ];
         }
         return view('admin.profile',$data);
+    }
+    function logout(){
+        if(session()->has('LoggedUser')){
+            session()->pull('LoggedUser');
+            return redirect('login');
+        }
     }
 }
